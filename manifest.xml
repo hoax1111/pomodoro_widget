@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="1">
+    <iq:application id="fd17b4c7-2b95-42b9-9a2d-eee588ef0225" type="widget" entry="pomodoro_widget_app" launcherIcon="@Drawables.LauncherIcon" name="@Strings.AppName" minSdkVersion="3.2.0">
+        <iq:products>
+            <iq:product id="vivoactive3m"/>
+            <iq:product id="vivoactive4"/>
+            <iq:product id="vivoactive4s"/>
+            <iq:product id="vivoactive5"/>
+        </iq:products>
+<iq:permissions>
+    <iq:uses-permission id="Background"/>
+</iq:permissions>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+        <iq:barrels/>
+    </iq:application>
+</iq:manifest>

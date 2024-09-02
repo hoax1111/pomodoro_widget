@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "pomodoro_widget",
+			"path": "../pomdoro_widget"
+		}
+	],
+	"settings": {}
+}

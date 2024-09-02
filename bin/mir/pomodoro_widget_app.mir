@@ -1,0 +1,102 @@
+[ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 2; ]
+import Toybox.Application;
+[ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 3; ]
+import Toybox.Lang;
+[ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 4; ]
+import Toybox.WatchUi;
+[ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 5; ]
+import Toybox.System;
+[ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 7; ]
+class pomodoro_widget_app extends Application.AppBase{
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    //! Constructor
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 9; ]
+    public
+    function initialize() as Void {
+_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_9_33_11_4_start:
+[ "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc" 10 8 ]
+        %tmp.2 = getv ? :AppBase;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_9_33_11_4_stop:
+    }
+    //! Handle app startup
+    //! @param state Startup arguments
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 16; ]
+    public
+    function onStart(state as Dictionary or Null) as Void {
+    }
+    //! Handle app shutdown
+    //! @param state Shutdown arguments
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 22; ]
+    public
+    function onStop(state as Dictionary or Null) as Void {
+    }
+    //! Return the initial views for the app
+    //! @return Array Pair [View, InputDelegate]
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 27; ]
+    public
+    function getInitialView() {
+_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_27_37_30_4_start:
+[ "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc" 28 6 ]
+        [ "_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_27_37_30_4_start" "_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_27_37_30_4_stop" ]
+        %view.1 = local;
+        %tmp.4 = getv ? :pomodoro_widget_view;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %view.1 %tmp.1;
+[ "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc" 29 6 ]
+        %tmp.5 = newa 2;
+        %tmp.7 = lgetv %view.1;
+        %tmp.8 = dup %tmp.5;
+        %tmp.9 = aputv %tmp.8 0 %tmp.7;
+        %tmp.13 = getv ? :pomodoro_widget_input_delegate;
+        %tmp.15 = lgetv %view.1;
+        %tmp.10 = newc %tmp.13 (%tmp.15);
+        %tmp.16 = dup %tmp.9;
+        %tmp.17 = aputv %tmp.16 1 %tmp.10;
+        ret %tmp.17;
+_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_27_37_30_4_stop:
+    }
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 32; ]
+    public
+    function onBackgroundData(data) {
+_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_32_43_35_4_start:
+[ "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc" 33 6 ]
+        %tmp.2 = getv ? :Storage;
+        %tmp.3 = getv function %tmp.2 :setValue;
+        %tmp.4 = "alarm";
+        %tmp.5 = true;
+        invoke %tmp.2 %tmp.3(%tmp.4, %tmp.5);
+[ "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc" 34 6 ]
+        %tmp.6 = getm $.Toybox.WatchUi;
+        %tmp.7 = getv function %tmp.6 :requestUpdate;
+        invoke %tmp.6 %tmp.7();
+_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_32_43_35_4_stop:
+    }
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 37; ]
+    public
+    function getServiceDelegate() {
+_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_37_40_39_4_start:
+[ "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc" 38 6 ]
+        %tmp.1 = newa 1;
+        %tmp.5 = getv ? :pomodoro_widget_service_delegate;
+        %tmp.2 = newc %tmp.5 ();
+        %tmp.6 = dup %tmp.1;
+        %tmp.7 = aputv %tmp.6 0 %tmp.2;
+        ret %tmp.7;
+_home_iben_Dev_Garmin_iben_pomodoro_widget_pomodoro_widget_app_mc_37_40_39_4_stop:
+    }
+    [ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 40; ]
+    public
+    function onAppUpdate() {
+    }
+}
+[ @file = "/home/iben/Dev_Garmin/iben/pomodoro_widget/pomodoro_widget_app.mc"; @line = 2; ]
+<init> {
+}
